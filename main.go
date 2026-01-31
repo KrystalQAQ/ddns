@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	ipifyURL      = "https://api.ipify.org"
+	ipifyURL      = "https://api.ip.sb/ip"
 	currentIPFile = "/data/current_ip.txt"
 )
 
