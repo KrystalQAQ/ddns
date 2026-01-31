@@ -16,10 +16,15 @@ RUN go mod download
 # 复制源代码
 COPY main.go ./
 
+# 自动检测目标架构
+ARG TARGETPLATFORM
+ARG TARGETOS
+ARG TARGETARCH
+
 # 编译为静态二进制文件
 # CGO_ENABLED=0 禁用CGO，生成纯静态二进制
 # -ldflags="-s -w" 去除调试信息和符号表，减小文件大小
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build \
+RUN CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build \
     -ldflags="-s -w" \
     -a -installsuffix cgo \
     -o ddns .
