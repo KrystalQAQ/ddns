@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  ddns:
+    # 使用GitHub构建的镜像（将yourusername替换为你的GitHub用户名）
+    image: ghcr.io/yourusername/ddns:latest
+
+    # 或者使用本地构建
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+
+    container_name: cloudflare-ddns
+    restart: unless-stopped
+
+    # 环境变量
+    environment:
+      - CLOUDFLARE_API_TOKEN=${CLOUDFLARE_API_TOKEN}
+      - DOMAIN=${DOMAIN}
+      - SUBDOMAIN=${SUBDOMAIN:-ddns}
+      - CHECK_INTERVAL=${CHECK_INTERVAL:-5}
+      - TZ=Asia/Shanghai
+
+    # 挂载数据目录（用于保存IP缓存）
+    volumes:
+      - ddns-data:/data
+
+    # 健康检查
+    healthcheck:
+      test: ["CMD", "test", "-f", "/data/current_ip.txt"]
+      interval: 1m
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+volumes:
+  ddns-data:
+    driver: local

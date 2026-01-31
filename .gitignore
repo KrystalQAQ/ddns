@@ -1,0 +1,30 @@
+# 环境变量文件
+.env
+
+# 编译输出
+/ddns
+*.exe
+*.dll
+*.so
+*.dylib
+
+# 测试文件
+*.test
+*.out
+
+# 依赖缓存
+go.sum
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 操作系统
+.DS_Store
+Thumbs.db
+
+# 日志
+*.log

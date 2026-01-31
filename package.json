@@ -1,0 +1,17 @@
+{
+  "name": "ddns",
+  "version": "1.0.0",
+  "description": "Cloudflare DDNS 自动更新脚本",
+  "main": "ddns.js",
+  "scripts": {
+    "start": "node ddns.js",
+    "dev": "node ddns.js"
+  },
+  "keywords": ["ddns", "cloudflare", "dns"],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.17.0",
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
