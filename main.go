@@ -304,8 +304,8 @@ func run() error {
 }
 
 func main() {
-	fmt.Println("\n🚀 Cloudflare DDNS 启动")
-	fmt.Println("========================================\n")
+	fmt.Print("\n🚀 Cloudflare DDNS 启动\n")
+	fmt.Println("========================================")
 
 	// 读取环境变量
 	config.APIToken = os.Getenv("CLOUDFLARE_API_TOKEN")
