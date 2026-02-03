@@ -2,8 +2,8 @@ version: '3.8'
 
 services:
   ddns:
-    # 使用GitHub构建的镜像（将yourusername替换为你的GitHub用户名）
-    image: ghcr.io/yourusername/ddns:latest
+    # 使用GitHub构建的镜像
+    image: ghcr.io/krystalqaq/ddns:latest
 
     # 或者使用本地构建
     # build:

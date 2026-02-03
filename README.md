@@ -67,7 +67,7 @@ docker run -d \
   -e CHECK_INTERVAL=5 \
   -e TZ=Asia/Shanghai \
   -v ddns-data:/data \
-  ghcr.io/yourusername/ddns:latest
+  ghcr.io/krystalqaq/ddns:latest
 ```
 
 ### 4. 查看日志
@@ -164,7 +164,13 @@ docker images ddns:local
 修改 `docker-compose.yml` 中的镜像地址：
 
 ```yaml
-image: ghcr.io/你的用户名/ddns:latest
+image: ghcr.io/krystalqaq/ddns:latest
+```
+
+或直接拉取镜像：
+
+```bash
+docker pull ghcr.io/krystalqaq/ddns:latest
 ```
 
 ## 多架构支持
